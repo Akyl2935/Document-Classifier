@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "document-classifier"
+version = "1.0.0"
+description = "Terminal-based ML document classifier with Rich UI"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Document Classifier Team"}]
+dependencies = [
+    "typer[all]>=0.9.0",
+    "rich>=13.0.0",
+    "scikit-learn>=1.3.0",
+    "joblib>=1.3.0",
+    "pdfplumber>=0.10.0",
+    "python-docx>=1.0.0",
+]
+
+[project.scripts]
+docclassify = "classifier.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["classifier*"]
